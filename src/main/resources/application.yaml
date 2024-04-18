@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5431/hse_sc
+    username: postgres-user
+    password: postgres-password
+    driver-class-name: org.postgresql.Driver
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          cat-facts:
+            url: https://cat-fact.herokuapp.com
+          calendarific:
+            url: https://api.calendarific.com/v2
+#calendarific:
+#  api_key: AJGX3hUuvjKfiJMprHS6sGFOkRTJUCK7
+#  country: ru
+#  state: Moscow
+#  base-url: https://api.calendarific.com/v2
+
+
+#  h2:
+#    console.enabled: true
