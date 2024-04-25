@@ -1,10 +1,11 @@
 spring:
+  liquibase:
+    enabled: true
   datasource:
     url: jdbc:postgresql://localhost:5431/hse_sc
     username: postgres-user
     password: postgres-password
     driver-class-name: org.postgresql.Driver
-
   cloud:
     openfeign:
       client:
@@ -12,13 +13,19 @@ spring:
           cat-facts:
             url: https://cat-fact.herokuapp.com
           calendarific:
-            url: https://api.calendarific.com/v2
-#calendarific:
-#  api_key: AJGX3hUuvjKfiJMprHS6sGFOkRTJUCK7
-#  country: ru
-#  state: Moscow
-#  base-url: https://api.calendarific.com/v2
+            url: https://calendarific.com
+          ethereum:
+            url: https://ethereum.api.watchdata.io/node/jsonrpc
+          mememaker:
+            url: http://alpha-meme-maker.herokuapp.com
+          dota:
+            url: https://api.opendota.com/api
+calendarific:
+  api:
+    key: AJGX3hUuvjKfiJMprHS6sGFOkRTJUCK7
+ethereum:
+  api:
+    key: b627face-b841-4c48-87d9-4504168759cc
 
 
-#  h2:
-#    console.enabled: true
+

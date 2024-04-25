@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.0
+      author: eaermolaeva_2@edu.hse.ru
+      changes:
+        - createTable:
+            tableName: match
+            columns:
+              - column:
+                  name: match_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: player_slot
+                  type: int
+              - column:
+                  name: radiant_win
+                  type: boolean
+              - column:
+                  name: duration
+                  type: int
+              - column:
+                  name: game_mode
+                  type: int
+              - column:
+                  name: lobby_type
+                  type: int
+              - column:
+                  name: hero_id
+                  type: int
+              - column:
+                  name: start_time
+                  type: bigint
+                  constraints:
+                    nullable: true
+              - column:
+                  name: version
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kills
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deaths
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: assists
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: average_rank
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: leaver_status
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: party_size
+                  type: int
+                  constraints:
+                    nullable: true

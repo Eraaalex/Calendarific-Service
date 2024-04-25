@@ -6,4 +6,25 @@
 - *SwaggerUI - http://localhost:8080/swagger-ui/index.html*
 - *PGAdmin - http://localhost:5050*
 
+## Пояснения
+
+Используемое API `https://api.opendota.com/api`
+
+[//]: # (### Запросы)
+
+[//]: # ()
+[//]: # (__GET__: `http://localhost:8080/dota/players/{id}` -- данные игрока)
+
+[//]: # ()
+[//]: # (__POST__: `http://localhost:8080/dota/players/{id}/refresh` -- Обновить историю матчей игрока)
+
+[//]: # ()
+[//]: # ()
+[//]: # ()
+
+
+
+
+
+
  
