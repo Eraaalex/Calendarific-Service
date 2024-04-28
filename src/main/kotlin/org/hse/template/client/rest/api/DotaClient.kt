@@ -2,6 +2,7 @@ package org.hse.template.client.rest.api
 
 import org.hse.template.client.rest.model.Match
 import org.hse.template.client.rest.model.PlayerProfile
+import org.hse.template.client.rest.model.PlayerProfileResponse
 import org.hse.template.client.rest.model.PlayerSearchResponse
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,7 +17,7 @@ interface DotaClient {
     fun refreshPlayerData(@PathVariable("account_id") accountId: Long): String
 
     @GetMapping("/players/{account_id}")
-    fun getPlayerData(@PathVariable("account_id") accountId: Long): PlayerProfile
+    fun getPlayerData(@PathVariable("account_id") accountId: Long): PlayerProfileResponse
 
     @GetMapping("/search")
     fun searchPlayer(@RequestParam("q") name : String) : List<PlayerSearchResponse>
@@ -32,24 +33,6 @@ interface DotaClient {
     fun getPlayerMatches(
         @PathVariable("account_id") accountId: Long,
         @RequestParam("limit") limit: Int?,
-        @RequestParam("offset") offset: Int?,
-        @RequestParam("win") win: Int?,
-        @RequestParam("patch") patch: Int?,
-        @RequestParam("game_mode") gameMode: Int?,
-        @RequestParam("lobby_type") lobbyType: Int?,
-        @RequestParam("region") region: Int?,
-        @RequestParam("date") date: Int?,
-        @RequestParam("lane_role") laneRole: Int?,
-        @RequestParam("hero_id") heroId: Int?,
-        @RequestParam("is_radiant") isRadiant: Int?,
-        @RequestParam("included_account_id") includedAccountId: List<Int>?,
-        @RequestParam("excluded_account_id") excludedAccountId: List<Int>?,
-        @RequestParam("with_hero_id") withHeroId: List<Int>?,
-        @RequestParam("against_hero_id") againstHeroId: List<Int>?,
-        @RequestParam("significant") significant: Int?,
-        @RequestParam("having") having: Int?,
-        @RequestParam("sort") sort: String?,
-        @RequestParam("project") project: List<String>?
     ): List<Match>
 
 }

@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import java.net.URL
 import java.time.ZonedDateTime
 
+data class PlayerProfileResponse(
+    val profile: PlayerProfile,
+    @JsonProperty("rank_tier") val rankTier: Int?,
+    @JsonProperty("leaderboard_rank") val leaderboardRank: Int?
+)
+
 data class PlayerProfile(
     @JsonProperty("account_id") val accountId: Long,
     @JsonProperty("personaname") val personaName: String,
@@ -20,7 +26,5 @@ data class PlayerProfile(
     val status: String?,
     @JsonProperty("fh_unavailable") val fhUnavailable: Boolean?,
     @JsonProperty("is_contributor") val isContributor: Boolean,
-    @JsonProperty("is_subscriber") val isSubscriber: Boolean,
-    @JsonProperty("rank_tier") val rankTier: Int?,
-    @JsonProperty("leaderboard_rank") val leaderboardRank: Int?
+    @JsonProperty("is_subscriber") val isSubscriber: Boolean
 )
